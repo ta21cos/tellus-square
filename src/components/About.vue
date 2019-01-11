@@ -1,9 +1,9 @@
 <template>
-  <div class="frame" v-scroll="handleDarkScroll">
-    <div class="logo-img-container">
+  <div class="frame" v-scroll="handleScroll">
+    <div class="logo-img-container" v-scroll="handleBlurScroll">
       <img class="logo-img" src="../../src/assets/tellusium-skeleton.svg">
     </div>
-    <div class="logo-title-container">
+    <div class="logo-title-container" v-scroll="handleBlurScroll">
       <p class="logo-title">terra(')s house</p>
     </div>
   </div>
@@ -11,15 +11,23 @@
 
 <script lang="ts">
 import Vue from "vue";
-import * as Consts from "../components/Constants";
+import { Consts } from "../components/Constants";
+
+const consts = new Consts();
 
 export default Vue.extend({
   name: "About",
   methods: {
-    handleDarkScroll(evt: Event, el: any) {
-      var val = window.scrollY / Consts.SCROLL_DIVIDER;
+    handleScroll(evt: Event, el: any) {
+      var val = window.scrollY / consts.SCROLL_DIVIDER;
       if (val > 1) val = 1;
       el.style.backgroundColor = "rgba(0, 0, 0, " + val + ")";
+
+      el.style.transform = "translateY(" + window.scrollY / 2 + "px)";
+    },
+    handleBlurScroll(evt: Event, el: any) {
+      let scale = 1 - window.scrollY / consts.SCROLL_DIVIDER;
+      el.style.webkitFilter = "blur(" + scrollY / 100 + "px)";
     }
   }
 });

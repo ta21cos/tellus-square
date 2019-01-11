@@ -6,9 +6,25 @@
         <div class="container__contents__background" :style="backgroundStyle">
           <div class="container__contents__background__filter"></div>
         </div>
-        <div class="container__contents__caption--half-right container__contents__caption--half">
-          <p class="container__contents__caption__title" v-bind:title="title">{{ title }}</p>
-          <p class="container__contents__caption__desc" v-bind:desc="desc">{{ desc }}</p>
+        <div
+          :class="{
+            'container__contents__caption--half-right': !isFullWidth && isRightCaption,
+            'container__contents__caption--half-left': !isFullWidth && !isRightCaption,
+            'container__contents__caption--row': isRowCaption,
+            'container__contents__caption': !isRowCaption}"
+        >
+          <p
+            :class="{
+              'container__contents__caption__title--row': isRowCaption,
+              'container__contents__caption__title': !isRowCaption}"
+            v-bind:title="title"
+          >{{ title }}</p>
+          <p
+            :class="{
+              'container__contents__caption__desc--row': isRowCaption,
+              'container__contents__caption__desc': !isRowCaption}"
+            v-bind:desc="desc"
+          >{{ desc }}</p>
         </div>
       </div>
     </a>
@@ -17,11 +33,21 @@
 
 <script lang="ts">
 import Vue from "vue";
-import * as Consts from "../components/Constants";
+import { Consts } from "../components/Constants";
+
+const consts = new Consts();
 
 export default Vue.extend({
   name: "Work",
-  props: ["title", "desc", "imgurl", "url"],
+  props: [
+    "title",
+    "desc",
+    "imgurl",
+    "url",
+    "isFullWidth",
+    "isRowCaption",
+    "isRightCaption"
+  ],
   components: {},
   data: function() {
     console.log("../../src/assets/espace.jpeg" === this.imgurl);
@@ -33,7 +59,7 @@ export default Vue.extend({
   },
   methods: {
     handleRevealScroll(evt: Event, el: any) {
-      var val = 1 - window.scrollY / Consts.SCROLL_DIVIDER;
+      var val = 1 - window.scrollY / consts.SCROLL_DIVIDER;
       if (val < 0) val = 0;
       el.style.backgroundColor = "rgba(255, 255, 255, " + val + ")";
     }
@@ -45,7 +71,7 @@ export default Vue.extend({
 <style scoped lang="stylus">
 .container {
   width: 100vw;
-  height: 600px;
+  height: 70vw;
   position: relative;
 
   &__link {

@@ -8,6 +8,9 @@
       :desc="work.desc"
       :url="work.url"
       :imgurl="work.imgurl"
+      :isFullWidth="work.isFullWidth"
+      :isRowCaption="work.isRowCaption"
+      :isRightCaption="work.isRightCaption"
     />
   </div>
 </template>
@@ -17,6 +20,13 @@ import Vue from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import About from "./components/About.vue";
 import Work from "./components/Work.vue";
+import {
+  Consts,
+  ContainerType,
+  ContainerWidth,
+  CaptionFlow,
+  CaptionPosition
+} from "./components/Constants";
 
 // custom directive for scroll
 Vue.directive("scroll", {
@@ -47,8 +57,9 @@ export default Vue.extend({
             "An shooting game to avoid meteors approaching from all directions. Can you escape from this “espace”?",
           imgurl: require("./assets/espace.jpeg"),
           url: "#",
-          type: "half",
-          pos: "center"
+          isFullWidth: false,
+          isRowCaption: false,
+          isRightCaption: true
         },
         {
           id: 1,
@@ -57,8 +68,9 @@ export default Vue.extend({
             "Created a website of Peegar, a super easy hardware development system.",
           imgurl: require("./assets/peegar.png"),
           url: "#",
-          type: "full",
-          pos: "row"
+          isFullWidth: true,
+          isRowCaption: true,
+          isRightCaption: true
         },
         {
           id: 2,
@@ -67,8 +79,9 @@ export default Vue.extend({
             "Created a website of Peegar, a super easy hardware development system.",
           imgurl: require("./assets/qiqiqi.png"),
           url: "#",
-          type: "half",
-          pos: "right"
+          isFullWidth: false,
+          isRowCaption: false,
+          isRightCaption: false
         },
         {
           id: 3,
@@ -77,8 +90,9 @@ export default Vue.extend({
             "Created a website of Peegar, a super easy hardware development system.",
           imgurl: require("./assets/morse.jpg"),
           url: "#",
-          type: "full",
-          pos: "row"
+          isFullWidth: true,
+          isRowCaption: false,
+          isRightCaption: true
         }
       ]
     };

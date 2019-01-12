@@ -1,11 +1,15 @@
 <template>
   <div class="flex-container">
-    <div :style="flex-container__bgContainer">
-      <div :style="flex-container__bgContainer__bgFilter"></div>
+    <div :style="flex - container__bgContainer">
+      <div :style="flex - container__bgContainer__bgFilter"></div>
     </div>
-    <div v-bind:style="caption-container">
-      <p v-bind:style="caption-container__title" v-bind:title="title">{{ title }}</p>
-      <p v-bind:style="caption-container__desc" v-bind:desc="desc">{{ desc }}</p>
+    <div v-bind:style="caption - container">
+      <p v-bind:style="caption - container__title" v-bind:title="title">
+        {{ title }}
+      </p>
+      <p v-bind:style="caption - container__desc" v-bind:desc="desc">
+        {{ desc }}
+      </p>
     </div>
   </div>
 </template>
@@ -18,10 +22,6 @@ import HalfWidthContainer from "./components/HalfWidthContainer.vue";
 export default Vue.extend({
   name: "About",
   props: ["title", "desc", "imgsrc", "url", "type", "pos"],
-  components: {
-    FullWidthContainer,
-    HalfWidthContainer
-  },
   methods: {
     handleRevealScroll(evt: Event, el: any) {
       var val = 1 - window.scrollY / 500;

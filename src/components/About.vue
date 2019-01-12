@@ -1,7 +1,7 @@
 <template>
   <div class="frame" v-scroll="handleScroll">
     <div class="logo-img-container" v-scroll="handleBlurScroll">
-      <img class="logo-img" src="../../src/assets/tellusium-skeleton.svg">
+      <img class="logo-img" src="../../src/assets/tellusium-skeleton.svg" />
     </div>
     <div class="logo-title-container" v-scroll="handleBlurScroll">
       <p class="logo-title">terra(')s house</p>

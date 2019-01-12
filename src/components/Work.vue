@@ -8,23 +8,32 @@
         </div>
         <div
           :class="{
-            'container__contents__caption--half-right': !isFullWidth && isRightCaption,
-            'container__contents__caption--half-left': !isFullWidth && !isRightCaption,
+            'container__contents__caption--half-right':
+              !isFullWidth && isRightCaption,
+            'container__contents__caption--half-left':
+              !isFullWidth && !isRightCaption,
             'container__contents__caption--row': isRowCaption,
-            'container__contents__caption': !isRowCaption}"
+            container__contents__caption: !isRowCaption
+          }"
         >
           <p
             :class="{
               'container__contents__caption__title--row': isRowCaption,
-              'container__contents__caption__title': !isRowCaption}"
+              container__contents__caption__title: !isRowCaption
+            }"
             v-bind:title="title"
-          >{{ title }}</p>
+          >
+            {{ title }}
+          </p>
           <p
             :class="{
               'container__contents__caption__desc--row': isRowCaption,
-              'container__contents__caption__desc': !isRowCaption}"
+              container__contents__caption__desc: !isRowCaption
+            }"
             v-bind:desc="desc"
-          >{{ desc }}</p>
+          >
+            {{ desc }}
+          </p>
         </div>
       </div>
     </a>
@@ -50,7 +59,6 @@ export default Vue.extend({
   ],
   components: {},
   data: function() {
-    console.log("../../src/assets/espace.jpeg" === this.imgurl);
     return {
       backgroundStyle: {
         backgroundImage: `url(${this.imgurl})`

@@ -31,9 +31,9 @@ export default Vue.extend({
   margin-bottom: 10px;
 
   &__link {
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
   }
 
   &__flexbox {
@@ -43,12 +43,15 @@ export default Vue.extend({
     justify-content: start;
     align-items: left;
 
+    &:hover {
+      font-weight: bold;
+    }
+
     &__date {
       display: inline-block;
-    //   vertical-align: middle;
       font-size: 15px;
       color: #fff;
-      width: 80px;
+      flex: 1;
       margin: auto 0;
     }
 
@@ -56,8 +59,7 @@ export default Vue.extend({
       display: inline-block;
       font-size: 15px;
       color: #fff;
-      margin-left: 10px;
-      width: 510px;
+      flex: 5;
     }
   }
 }

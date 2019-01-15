@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <About />
+    <div class="container">
+      <About class="container__about" />
+      <Profile class="container__profile" />
+    </div>
     <Work
       v-for="(work, index) in works"
       :key="index"
@@ -13,6 +16,7 @@
       :isRightCaption="work.isRightCaption"
     />
     <Articles :articles="articles" />
+    <Contact />
   </div>
 </template>
 
@@ -20,8 +24,10 @@
 import Vue from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import About from "./components/About.vue";
+import Profile from "./components/Profile.vue";
 import Work from "./components/Work.vue";
 import Articles from "./components/Articles.vue";
+import Contact from "./components/Contact.vue";
 import {
   Consts,
   ContainerType,
@@ -46,8 +52,10 @@ export default Vue.extend({
   name: "app",
   components: {
     About,
+    Profile,
     Work,
-    Articles
+    Articles,
+    Contact
   },
   data: function() {
     return {
@@ -213,5 +221,16 @@ body, p {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.container {
+  display: flex;
+
+  &__about {
+    flex: 1;
+  }
+  &__profile {
+    flex: 1;
+  }
 }
 </style>

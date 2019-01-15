@@ -1,25 +1,34 @@
 <template>
-  <div class="container">
-    <a class="container__link" v-bind:href="url">
-      <div class="container__cover" v-scroll="handleRevealScroll"></div>
-      <div class="container__contents">
-        <div class="container__contents__background" :style="backgroundStyle">
-          <div class="container__contents__background__filter"></div>
+  <div
+    :class="{
+      'work-container': !isWindowTop,
+      'work-container--fix': isWindowTop
+    }"
+    v-scroll="handleContainerScroll"
+  >
+    <a class="work-container__link" v-bind:href="url">
+      <div class="work-container__cover" v-scroll="handleRevealScroll"></div>
+      <div class="work-container__contents">
+        <div
+          class="work-container__contents__background"
+          :style="backgroundStyle"
+        >
+          <div class="work-container__contents__background__filter"></div>
         </div>
         <div
           :class="{
-            'container__contents__caption--half-right':
+            'work-container__contents__caption--half-right':
               !isFullWidth && isRightCaption,
-            'container__contents__caption--half-left':
+            'work-container__contents__caption--half-left':
               !isFullWidth && !isRightCaption,
-            'container__contents__caption--row': isRowCaption,
-            container__contents__caption: !isRowCaption
+            'work-container__contents__caption--row': isRowCaption,
+            'work-container__contents__caption': !isRowCaption
           }"
         >
           <p
             :class="{
-              'container__contents__caption__title--row': isRowCaption,
-              container__contents__caption__title: !isRowCaption
+              'work-container__contents__caption__title--row': isRowCaption,
+              'work-container__contents__caption__title': !isRowCaption
             }"
             v-bind:title="title"
           >
@@ -27,8 +36,8 @@
           </p>
           <p
             :class="{
-              'container__contents__caption__desc--row': isRowCaption,
-              container__contents__caption__desc: !isRowCaption
+              'work-container__contents__caption__desc--row': isRowCaption,
+              'work-container__contents__caption__desc': !isRowCaption
             }"
             v-bind:desc="desc"
           >
@@ -62,10 +71,18 @@ export default Vue.extend({
     return {
       backgroundStyle: {
         backgroundImage: `url(${this.imgurl})`
-      }
+      },
+      isWindowTop: false
     };
   },
   methods: {
+    handleContainerScroll(evt: Event, el: any) {
+      if (window.scrollY >= el.offsetTop) {
+        this.isWindowTop = true;
+      } else {
+        this.isWindowTop = false;
+      }
+    },
     handleRevealScroll(evt: Event, el: any) {
       var val = 1 - window.scrollY / consts.SCROLL_DIVIDER;
       if (val < 0) val = 0;
@@ -77,10 +94,18 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-.container {
+
+.work-container {
   width: 100vw;
   height: 70vw;
   position: relative;
+
+  &--fix {
+    width: 100vw;
+    height: 70vw;
+    position: sticky;
+    top: 0;
+  }
 
   &__link {
     height: 100%;

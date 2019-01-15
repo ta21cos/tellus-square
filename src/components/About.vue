@@ -4,7 +4,8 @@
       <img class="logo-img" src="../../src/assets/tellusium-skeleton.svg" />
     </div>
     <div class="logo-title-container" v-scroll="handleBlurScroll">
-      <p class="logo-title">terra(')s house</p>
+      <p class="logo-title">Terra's house</p>
+      <p class="logo-description">tellusium's portfolio</p>
     </div>
   </div>
 </template>
@@ -36,13 +37,14 @@ export default Vue.extend({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
 .frame {
-  width: 100vw;
+  width: 50vw;
   height: 100vh;
   position: relative;
+  background-image: url("../assets/marble.png");
 }
 
 .logo-img-container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -52,22 +54,30 @@ export default Vue.extend({
 }
 
 .logo-img {
-  width: 70px;
-  height: 70px;
+  width: 150px;
+  height: 150px;
+  filter: brightness(50%);
 }
 
 .logo-title-container {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
   position: absolute;
   top: 0;
 }
 
 .logo-title {
+  font-size: 30px;
+  color: #000;
+}
+
+.logo-description {
   font-size: 20px;
   color: #000;
+  margin-top: 10px;
 }
 </style>

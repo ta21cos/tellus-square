@@ -36,6 +36,7 @@ export default Vue.extend({
   width: 100vw;
   background-color: #000;
   padding: 40px;
+  position: relative;
 }
 
 .title {

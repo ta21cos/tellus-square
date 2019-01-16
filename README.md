@@ -1,3 +1,3 @@
-# terras-house
+# tellus-square
 
 tellusium's portfolio

@@ -62,18 +62,22 @@ export default Vue.extend({
       works: [
         {
           title: "MayfesApp",
-          desc:
-            "Created a website of Peegar, a super easy hardware development system.",
+          desc: `
+            五月祭と呼ばれる学園祭の案内アプリケーションです．
+            マップや文字での企画検索，企画のお気に入り・スケジュール登録が行えます．
+            GPSと連動し，特定の場所に行くとマスコットキャラクターの壁紙がもらえるなどのおまけ機能も搭載しています．
+          `
           imgurl: require("./assets/mayfesapp.png"),
-          url: "http://iis-lab.org/research/circuitgeneration/",
+          url: "https://gogatsusai.jp/90/visitor/app.html",
           isFullWidth: true,
           isRowCaption: true,
           isRightCaption: false
         },
         {
           title: "Qiita Infovis",
-          desc:
-            "Created a website of Peegar, a super easy hardware development system.",
+          desc: `
+            Qiitaという技術記事投稿サイトの記事についている「タグ」の共起関係を可視化したシステムです．
+          `,
           imgurl: require("./assets/qiqiqi.png"),
           url: "https://qiita.com/tellusium/items/91ada7c868e4f0a140af",
           isFullWidth: false,
@@ -82,8 +86,10 @@ export default Vue.extend({
         },
         {
           title: "Schematics / Breadboard converter",
-          desc:
-            "Created a website of Peegar, a super easy hardware development system.",
+          desc: `
+            卒業論文で製作した「回路図の画像からブレッドボード向け実体配線図を自動生成するシステム」のプロトタイプです．
+            プロトタイプなため，文字ベースの出力のみ行うことができます．
+          `,
           imgurl: require("./assets/sotsuronn.png"),
           url: "http://iis-lab.org/research/circuitgeneration/",
           isFullWidth: true,
@@ -92,8 +98,9 @@ export default Vue.extend({
         },
         {
           title: "Peegar website",
-          desc:
-            "Created a website of Peegar, a super easy hardware development system.",
+          desc: `
+            学科同期が製作した簡易プロトタイピングシステム "Peegar" のWebサイトです．
+          `
           imgurl: require("./assets/peegar.png"),
           url: "http://peegar.com/",
           isFullWidth: false,
@@ -102,8 +109,11 @@ export default Vue.extend({
         },
         {
           title: "Espace",
-          desc:
-            "An shooting game to avoid meteors approaching from all directions. Can you escape from this “espace”?",
+          desc: `
+            迫り来る隕石から逃げ続けるというゲームです．
+            徐々に早くなる隕石から1分逃げ切れればゲームクリア．
+            Can you escape from "espace"?
+          `
           imgurl: require("./assets/espace.jpeg"),
           url: "https://github.com/ta21cos/espace",
           isFullWidth: false,
@@ -112,8 +122,11 @@ export default Vue.extend({
         },
         {
           title: "Morse transmitter / receiver",
-          desc:
-            "Created a website of Peegar, a super easy hardware development system.",
+          desc: `
+            アナログ回路を中心に製作したモールス信号送信・受信機です．
+            特定の周波数の音声信号に載せられたモールス信号を受信・送信できます．
+            信号処理はアナログ回路で，対応する文字の解析はPICマイコンを用いて行なっています．
+          `
           imgurl: require("./assets/morse.png"),
           url: "",
           isFullWidth: true,
@@ -122,6 +135,11 @@ export default Vue.extend({
         }
       ],
       articles: [
+        {
+          date: '2019-01-15',
+          title: 'JavaScriptで要素をスクロール連動させたい時の基本知識',
+          url: 'https://tellusium.hatenablog.com/entry/2019/01/15/204849'
+        },
         {
           date: "2018-12-23",
           title: "brainfxckで輝夜月風の言語を作ってみた",

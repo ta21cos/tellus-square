@@ -22,18 +22,14 @@
             'work-container__contents__caption__title': !isRowCaption
           }"
           v-bind:title="title"
-        >
-          {{ title }}
-        </p>
+        >{{ title }}</p>
         <p
           :class="{
             'work-container__contents__caption__desc--row': isRowCaption,
             'work-container__contents__caption__desc': !isRowCaption
           }"
           v-bind:desc="desc"
-        >
-          {{ desc }}
-        </p>
+        >{{ desc }}</p>
       </div>
     </div>
   </a>
@@ -70,7 +66,7 @@ export default Vue.extend({
       // let scrollTop = window.scrollY;
       // let windowHeight = window.document.documentElement.clientHeight;
       // let scrollBtm = scrollTop + windowHeight;
-      let elementTop = el.closest("#parallax-baseline").getBoundingClientRect()
+      let elementTop = el.closest("#parallax-baseline")!.getBoundingClientRect()
         .top;
       // let elementTop = el.getBoundingClientRect().top;
       // if (windowHeight >= elementTop && elementTop >= -windowHeight) {
@@ -97,7 +93,6 @@ export default Vue.extend({
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="stylus">
-
 .work-container {
   display: block;
   width: 100vw;

@@ -66,7 +66,7 @@ export default Vue.extend({
             五月祭と呼ばれる学園祭の案内アプリケーションです．
             マップや文字での企画検索，企画のお気に入り・スケジュール登録が行えます．
             GPSと連動し，特定の場所に行くとマスコットキャラクターの壁紙がもらえるなどのおまけ機能も搭載しています．
-          `
+          `,
           imgurl: require("./assets/mayfesapp.png"),
           url: "https://gogatsusai.jp/90/visitor/app.html",
           isFullWidth: true,
@@ -100,7 +100,7 @@ export default Vue.extend({
           title: "Peegar website",
           desc: `
             学科同期が製作した簡易プロトタイピングシステム "Peegar" のWebサイトです．
-          `
+          `,
           imgurl: require("./assets/peegar.png"),
           url: "http://peegar.com/",
           isFullWidth: false,
@@ -113,7 +113,7 @@ export default Vue.extend({
             迫り来る隕石から逃げ続けるというゲームです．
             徐々に早くなる隕石から1分逃げ切れればゲームクリア．
             Can you escape from "espace"?
-          `
+          `,
           imgurl: require("./assets/espace.jpeg"),
           url: "https://github.com/ta21cos/espace",
           isFullWidth: false,
@@ -126,7 +126,7 @@ export default Vue.extend({
             アナログ回路を中心に製作したモールス信号送信・受信機です．
             特定の周波数の音声信号に載せられたモールス信号を受信・送信できます．
             信号処理はアナログ回路で，対応する文字の解析はPICマイコンを用いて行なっています．
-          `
+          `,
           imgurl: require("./assets/morse.png"),
           url: "",
           isFullWidth: true,

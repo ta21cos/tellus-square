@@ -1,10 +1,11 @@
 <template>
-  <div class="frame" v-scroll="handleScroll">
-    <div class="logo-img-container" v-scroll="handleBlurScroll">
-      <img class="logo-img" src="../../src/assets/tellusium-skeleton.svg" />
+  <div class="frame">
+    <div class="frame__background" v-scroll="handleScroll"></div>
+    <div class="logo-img-container">
+      <!-- <img class="logo-img" src="../../src/assets/tellusium-skeleton.svg" /> -->
     </div>
-    <div class="logo-title-container" v-scroll="handleBlurScroll">
-      <p class="logo-title">Terra's house</p>
+    <div class="logo-title-container">
+      <p class="logo-title">Tellus' Square</p>
       <p class="logo-description">tellusium's portfolio</p>
     </div>
   </div>
@@ -20,15 +21,7 @@ export default Vue.extend({
   name: "About",
   methods: {
     handleScroll(evt: Event, el: any) {
-      var val = window.scrollY / consts.SCROLL_DIVIDER;
-      if (val > 1) val = 1;
-      el.style.backgroundColor = "rgba(0, 0, 0, " + val + ")";
-
       el.style.transform = "translateY(" + window.scrollY / 2 + "px)";
-    },
-    handleBlurScroll(evt: Event, el: any) {
-      let scale = 1 - window.scrollY / consts.SCROLL_DIVIDER;
-      el.style.webkitFilter = "blur(" + scrollY / 100 + "px)";
     }
   }
 });
@@ -40,7 +33,15 @@ export default Vue.extend({
   width: 50vw;
   height: 100vh;
   position: relative;
-  background-image: url("../assets/marble.png");
+  overflow: hidden;
+
+  &__background {
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/marble.png");
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .logo-img-container {

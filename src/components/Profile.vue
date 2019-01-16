@@ -1,15 +1,19 @@
 <template>
-  <div class="fbox" v-scroll="handleScroll">
+  <div class="fbox">
     <img class="fbox__logo-img" src="../assets/tellusium.png" />
     <p class="fbox__name">@tellusium</p>
     <p class="fbox__introduction">
-      Web application engineer<br />Smartphone app engineer
+      Web application engineer<br />Smartphone app engineer<br />Splatoon 2
+      player
     </p>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import { Consts } from "../components/Constants";
+
+let consts = new Consts();
 
 export default Vue.extend({
   name: "Profile",

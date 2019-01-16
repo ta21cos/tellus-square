@@ -54,13 +54,14 @@ export default Vue.extend({
       font-size: 30px;
       color: #fff;
       margin: 0 20px;
+      transition-duration: 0.5s;
 
       &__icon {
         margin-top: 15px;
       }
 
       &:hover {
-        transform: scale(1.2, 1.2);
+        transform: scale(1.1, 1.1);
       }
     }
   }

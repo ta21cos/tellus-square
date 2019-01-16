@@ -61,12 +61,32 @@ export default Vue.extend({
     return {
       works: [
         {
-          title: "Espace",
+          title: "MayfesApp",
           desc:
-            "An shooting game to avoid meteors approaching from all directions. Can you escape from this “espace”?",
-          imgurl: require("./assets/espace.jpeg"),
-          url: "#",
+            "Created a website of Peegar, a super easy hardware development system.",
+          imgurl: require("./assets/mayfesapp.png"),
+          url: "http://iis-lab.org/research/circuitgeneration/",
+          isFullWidth: true,
+          isRowCaption: true,
+          isRightCaption: false
+        },
+        {
+          title: "Qiita Infovis",
+          desc:
+            "Created a website of Peegar, a super easy hardware development system.",
+          imgurl: require("./assets/qiqiqi.png"),
+          url: "https://qiita.com/tellusium/items/91ada7c868e4f0a140af",
           isFullWidth: false,
+          isRowCaption: false,
+          isRightCaption: false
+        },
+        {
+          title: "Schematics / Breadboard converter",
+          desc:
+            "Created a website of Peegar, a super easy hardware development system.",
+          imgurl: require("./assets/sotsuronn.png"),
+          url: "http://iis-lab.org/research/circuitgeneration/",
+          isFullWidth: true,
           isRowCaption: false,
           isRightCaption: true
         },
@@ -75,17 +95,17 @@ export default Vue.extend({
           desc:
             "Created a website of Peegar, a super easy hardware development system.",
           imgurl: require("./assets/peegar.png"),
-          url: "#",
-          isFullWidth: true,
-          isRowCaption: true,
+          url: "http://peegar.com/",
+          isFullWidth: false,
+          isRowCaption: false,
           isRightCaption: true
         },
         {
-          title: "Qiita Infovis",
+          title: "Espace",
           desc:
-            "Created a website of Peegar, a super easy hardware development system.",
-          imgurl: require("./assets/qiqiqi.png"),
-          url: "#",
+            "An shooting game to avoid meteors approaching from all directions. Can you escape from this “espace”?",
+          imgurl: require("./assets/espace.jpeg"),
+          url: "https://github.com/ta21cos/espace",
           isFullWidth: false,
           isRowCaption: false,
           isRightCaption: false
@@ -94,8 +114,8 @@ export default Vue.extend({
           title: "Morse transmitter / receiver",
           desc:
             "Created a website of Peegar, a super easy hardware development system.",
-          imgurl: require("./assets/morse.jpg"),
-          url: "#",
+          imgurl: require("./assets/morse.png"),
+          url: "",
           isFullWidth: true,
           isRowCaption: false,
           isRightCaption: true

@@ -64,7 +64,7 @@ export default Vue.extend({
   methods: {
     handleParallaxScroll(evt: Event, el: HTMLElement) {
       // let scrollTop = window.scrollY;
-      // let windowHeight = window.document.documentElement.clientHeight;
+      // let windowHeight = window.document.documentElement!.clientHeight;
       // let scrollBtm = scrollTop + windowHeight;
       let elementTop = el.closest("#parallax-baseline")!.getBoundingClientRect()
         .top;
@@ -75,6 +75,12 @@ export default Vue.extend({
         "translate3d(0px, " + -1 * (elementTop / 2) + "px, 0px)";
       // el.style.backgroundPosition =
       // "0 " + (windowHeight - elementTop / 2) + "px";
+      // }
+
+      // if (windowHeight >= elementTop && -windowHeight < elementTop) {
+      //   el.style.visibility = "visible";
+      // } else {
+      //   el.style.visibility = "hidden";
       // }
     },
     handleContainerScroll(evt: Event, el: any) {

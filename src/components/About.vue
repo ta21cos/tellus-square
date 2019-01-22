@@ -21,7 +21,8 @@ export default Vue.extend({
   name: "About",
   methods: {
     handleScroll(evt: Event, el: any) {
-      el.style.transform = "translateY(" + window.scrollY / 2 + "px)";
+      el.style.transform =
+        "translate3d(0px, " + window.scrollY / 2 + "px, 0px)";
     }
   }
 });
@@ -38,7 +39,7 @@ export default Vue.extend({
   &__background {
     width: 100%;
     height: 100%;
-    background-image: url("../assets/marble.png");
+    background-image: url('../assets/marble.png');
     background-size: cover;
     background-position: center;
   }

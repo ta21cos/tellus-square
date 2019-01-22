@@ -70,7 +70,9 @@ export default Vue.extend({
         .top;
       // let elementTop = el.getBoundingClientRect().top;
       // if (windowHeight >= elementTop && elementTop >= -windowHeight) {
-      el.style.transform = "translateY(" + -1 * (elementTop / 2) + "px)";
+      // el.style.transform = "translateY(" + -1 * (elementTop / 2) + "px)";
+      el.style.transform =
+        "translate3d(0px, " + -1 * (elementTop / 2) + "px, 0px)";
       // el.style.backgroundPosition =
       // "0 " + (windowHeight - elementTop / 2) + "px";
       // }
@@ -109,7 +111,7 @@ export default Vue.extend({
     position: absolute;
     top: 0;
     z-index: -1;
-    transition-duration: 0.02s;
+    // transition-duration: 0.02s;
   }
 
   &__contents {
